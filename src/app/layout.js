@@ -1,5 +1,11 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import "tailwindcss/utilities.css";
+import "primereact/resources/themes/lara-light-green/theme.css";
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import './globals.css'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="favicon.svg"/>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
