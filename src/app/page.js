@@ -1,64 +1,86 @@
-import React from 'react'; 
+"use client"
+
+import Image from 'next/image'; 
+import React, { useState, useEffect } from 'react'; 
 import Link from "next/link";
-import { Menubar } from 'primereact/menubar';
 import './globals.css';
-import Botoes from './components/buttons';
-import Image from 'next/image'; // Importando o componente Image do Next.js
+import Botoes from './components/sessaoInicial/buttons';
+import FotoLosango from './components/sessaoInicial/imagemLosango';
+import FotoLosangoMobile from './components/sessaoInicial/imagemLosangoMobile';
+import LogoNome from './components/sessaoInicial/logoNome';
+import TextoApoio from './components/sessaoInicial/textoApoio';
+import DivVerde from './components/sessaoInicial/linhaVerde';
+import NomeDra from './components/sessaoInicial/nomeDra';
+import Menubar from './components/sessaoInicial/menuBar';
+
 
 export default function Home() {
 
-  const items = [
-    {
-        label: 'Início',
-        icon: 'pi pi-home'
-    },
-];
-const start = (
-  <Image 
-    src="/logo.png" 
-    alt="logo" 
-    width={50} 
-    height={50} 
-    className="mr-8" 
-  />
-);
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // Função para verificar se a tela é mobile
+      const checkIsMobile = () => {
+        setIsMobile(window.innerWidth < 768); // Defina o ponto de quebra para dispositivos móveis
+      };
+  
+      // Verificar o tamanho da tela quando a janela é redimensionada
+      window.addEventListener('resize', checkIsMobile);
+  
+      // Verificar o tamanho da tela na montagem do componente
+      checkIsMobile();
+  
+      // Limpar o event listener quando o componente é desmontado
+      return () => window.removeEventListener('resize', checkIsMobile);
+    }, []);
+  
 
   return (
-    <div className='pt-5 px-24 pb-10' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
-      <div className="card">
-            <Menubar model={items} start={start} className='border-0' style={{background: 'rgba(255,255,255,0.0)'}} />
-      </div>
-      <div className='-mt-14 flex justify-evenly items-center'>
-        <div className='text-start'>
-          <div>
-          <label className='text-black/75 block text-4xl'>Meu nome é </label>
-          <label className=' font-bold text-5xl'>ANA BEATRIZ SQUADRI</label>
-          </div>
-          <div className='my-5 border border-solid rounded border-verdinho-logo'></div>
-          <div className='text-black/75'>
-          <label className='italic text-2xl'>E quero oferecer toda a minha </label>
-          <label className='font-bold italic text-2xl'>atenção e disponibilidade </label>
-          <label className='italic text-2xl'>à você.</label>
-          </div>
-          <Botoes/>
-        </div>
+    <div>
+      {isMobile ? (
+        <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
 
-        <div>
-          <Image 
-            src='/welcome-photo.png' 
-            alt="Foto Dra. Sorrindo" 
-            width={400} 
-            height={462} 
-            srcSet={{
-              '/welcome-photo.png 400w': 400,
-              '/welcome-photo@2x.png 800w': 800,
-              '/welcome-photo@3x.png 1200w': 1200,
-            }}
-            priority
-          />
+          <div className='pt-7 flex justify-center'>
+            <LogoNome/>
+          </div>
+          <div className='mt-3'>
+          <TextoApoio/>
+          </div>
+          <DivVerde/>
+          <div className='flex justify-center'>
+            <FotoLosangoMobile/>
+          </div>
+          <div className='pb-7'>
+          <Botoes/>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>
+          <div className='pt-5 px-16 pb-10' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
+          <div className=''>
+          <Menubar/>
+          </div>
+          <div className='-mt-14 flex justify-evenly items-center'>
+            <div className='text-start'>
+            <NomeDra/>
+            <DivVerde/>
+            <div>
+            <TextoApoio/>
+            </div>
+            <div>
+          <Botoes/>
+          </div>
+          </div>
+          <div>
+          <FotoLosango/>
+          </div>
+          </div>
+          </div>
+        </div>
+      )}
     </div>
+
+    
   );
 }
 
