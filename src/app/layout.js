@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import "tailwindcss/utilities.css";
 import "primereact/resources/themes/lara-light-green/theme.css";
