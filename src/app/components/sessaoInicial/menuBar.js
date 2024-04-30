@@ -11,7 +11,7 @@ export default function menuBar() {
     ];
     const start = (
       <Image 
-        src="/logo.png" 
+        src="/logo-menu.png" 
         alt="logo" 
         width={50} 
         height={50} 
