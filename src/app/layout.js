@@ -24,6 +24,8 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="favicon.svg"/>
       </head>
       <body className={inter.className}>{children}</body>
+      <Analytics />
+      <SpeedInsights/>
     </html>
   );
 }
