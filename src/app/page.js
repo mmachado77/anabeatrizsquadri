@@ -2,6 +2,8 @@
 
 import Image from 'next/image'; 
 import React, { useState, useEffect } from 'react'; 
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Link from "next/link";
 import './globals.css';
 import Botoes from './components/sessaoInicial/buttons';
