@@ -32,11 +32,26 @@ export default function Apresentacao(...props) {
     return (
         <div>
           {isMobile ? (
-            <div>
-            <InstagramEmbed url="https://www.instagram.com/reel/C6BXL0POIMs/" width={328} captioned />
+            <div className='pt-5 px-16 pb-10'>
+            <div className="text-center">
+            <div className='max-w-[1000px]'>
+                    <DicasTitulo/>
+                    <DivVerde/>
+                    <TextoApoioInstagram/>                   
+                </div>
+                
+                <div className='mt-5'>
+                    <InstagramEmbed url="https://www.instagram.com/reel/C6M42DdOWTt/" width={328}  />
+                </div>
+                <div className='flex justify-center'>
+                    <BotaoInstagram/>
+                </div>
+                
+                
+            </div>
             </div>
           ) : (
-<div className='pt-5 px-16 pb-10'>
+            <div className='pt-5 px-16 pb-10'>
             <div className="flex justify-center items-center gap-24">
             <div className='max-w-[1000px]'>
                     <DicasTitulo/>

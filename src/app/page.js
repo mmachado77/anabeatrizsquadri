@@ -40,7 +40,7 @@ export default function Home() {
   );
 
   return (
-    <div style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
+    <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
       <div className="">
         <Menubar model={items} start={start} className='px-4 lg:px-24 border-0 w-full ml-0' style={{ background: 'linear-gradient(180deg, rgba(125,166,83,0.9) 0%, rgba(200,226,112,0.9) 100%)' }} />
       </div>
