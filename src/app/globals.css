@@ -13,3 +13,18 @@ body {
     background-color: #ffffff;
 }
 
+.p-menuitem-text {
+    color: white;
+}
+
+.p-menuitem-link:hover {
+    background-color: #7DA653 !important;
+}
+
+/* .p-menubar-root-list-mobile-active{
+    background: #7DA653 !important;
+} */
+
+.p-menubar {
+    position: fixed;
+}
