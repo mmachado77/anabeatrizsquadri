@@ -37,11 +37,11 @@ export default function Apresentacao(...props) {
             <div className='max-w-[1000px]'>
                     <DicasTitulo/>
                     <DivVerde/>
-                    
+
                     <TextoApoioInstagram/>                   
                 </div>
                 
-                <div className='mt-5'>
+                <div className='mt-5 flex justify-center'>
                     <InstagramEmbed url="https://www.instagram.com/reel/C6M42DdOWTt/" width={328}  />
                 </div>
                 <div className='flex justify-center'>
