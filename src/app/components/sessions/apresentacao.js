@@ -32,7 +32,7 @@ export default function Apresentacao(...props) {
     return (
         <div>
           {isMobile ? (
-            <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
+            <div className='' >
     
               <div className='pt-7 flex justify-center'>
                 <div className='mt-16'>
@@ -53,7 +53,7 @@ export default function Apresentacao(...props) {
             </div>
           ) : (
             <div>
-              <div className='pt-5 px-16 pb-10' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
+              <div className='pt-5 px-16 pb-10'>
 
               <div className='mt-16 flex justify-evenly items-center'>
                 <div className='text-start'>

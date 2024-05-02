@@ -21,10 +21,20 @@ body {
     background-color: #7DA653 !important;
 }
 
-/* .p-menubar-root-list-mobile-active{
-    background: #7DA653 !important;
-} */
+.p-focus {
+    background-color: #7DA653 !important;
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .p-menubar .p-menubar-root-list {
+    background: #C8E270;
+    }
+}
 
 .p-menubar {
+    z-index: 1;
     position: fixed;
+
 }

@@ -2,9 +2,16 @@
 
 import React, { useState, useEffect } from 'react'; 
 import { InstagramEmbed, } from 'react-social-media-embed';
+import { Carousel } from 'primereact/carousel';
+import { Card } from 'primereact/card';
+import DicasTitulo from './sessaoInstagram/dicasTitulo';
+import TextoApoioInstagram from './sessaoInstagram/textoApoio';
+import DivVerde from './sessaoInicial/linhaVerde';
+import BotaoInstagram from '../ui/botaoInstagram';
 
 export default function Apresentacao(...props) {
   const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
     // Função para verificar se a tela é mobile
@@ -29,10 +36,23 @@ export default function Apresentacao(...props) {
             <InstagramEmbed url="https://www.instagram.com/reel/C6BXL0POIMs/" width={328} captioned />
             </div>
           ) : (
-
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <InstagramEmbed url="https://www.instagram.com/reel/C6BXL0POIMs/" width={328} />
-          </div>
+<div className='pt-5 px-16 pb-10'>
+            <div className="flex justify-center items-center gap-24">
+            <div className='max-w-[1000px]'>
+                    <DicasTitulo/>
+                    <DivVerde/>
+                    <TextoApoioInstagram/>
+                    <div className='mt-5 flex justify-center'>
+                    <BotaoInstagram/>
+                    </div>
+                    
+                </div>
+                <div>
+                    <InstagramEmbed url="https://www.instagram.com/reel/C6M42DdOWTt/" width={328}  />
+                </div>
+                
+            </div>
+            </div>
           )}
         </div>
     
