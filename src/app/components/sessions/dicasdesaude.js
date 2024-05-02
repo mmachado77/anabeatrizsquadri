@@ -32,7 +32,7 @@ export default function Apresentacao(...props) {
     return (
         <div>
           {isMobile ? (
-            <div className='pt-5 px-16 pb-10'>
+            <div className='pt-5 px-5 pb-10'>
             <div className="text-center">
             <div className='max-w-[1000px]'>
                     <DicasTitulo/>

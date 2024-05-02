@@ -1,13 +1,11 @@
 "use client"
 
+import React, { useRef } from 'react';
 import './globals.css';
 import Apresentacao from './components/sessions/apresentacao';
 import Dicasdesaude from './components/sessions/dicasdesaude';
 import { Menubar } from 'primereact/menubar';
 import Image from 'next/image';
-import { useRef } from 'react';
-
-
 
 export default function Home() {
   const apresentacaoRef = useRef(null);
@@ -16,15 +14,14 @@ export default function Home() {
   const items = [
     {
       label: 'Início',
-      // icon: 'pi pi-home',
       command: () => {
-        apresentacaoRef.current.scrollIntoView({ behavior: 'smooth' });
+        scrollToSession(apresentacaoRef);
       }
     },
     {
       label: 'Dicas de Saúde',
       command: () => {
-        dicasdesaudeRef.current.scrollIntoView({ behavior: 'smooth' });
+        scrollToSession(dicasdesaudeRef);
       }
     },
   ];
@@ -38,6 +35,12 @@ export default function Home() {
       className="mr-8" 
     />
   );
+
+  const scrollToSession = (ref) => {
+    const yOffset = -65; // Ajuste de deslocamento para baixo, ajuste conforme necessário
+    const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
 
   return (
     <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
@@ -53,4 +56,3 @@ export default function Home() {
     </div>
   );
 }
-
