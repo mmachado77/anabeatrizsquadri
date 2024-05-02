@@ -37,6 +37,7 @@ export default function Apresentacao(...props) {
             <div className='max-w-[1000px]'>
                     <DicasTitulo/>
                     <DivVerde/>
+                    
                     <TextoApoioInstagram/>                   
                 </div>
                 
