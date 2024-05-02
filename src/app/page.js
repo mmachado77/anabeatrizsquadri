@@ -1,86 +1,58 @@
 "use client"
 
-import Image from 'next/image'; 
-import React, { useState, useEffect } from 'react'; 
-import Link from "next/link";
+import React, { useRef } from 'react';
 import './globals.css';
-import Botoes from './components/sessaoInicial/buttons';
-import FotoLosango from './components/sessaoInicial/imagemLosango';
-import FotoLosangoMobile from './components/sessaoInicial/imagemLosangoMobile';
-import LogoNome from './components/sessaoInicial/logoNome';
-import TextoApoio from './components/sessaoInicial/textoApoio';
-import DivVerde from './components/sessaoInicial/linhaVerde';
-import NomeDra from './components/sessaoInicial/nomeDra';
-import Menubar from './components/sessaoInicial/menuBar';
-
+import Apresentacao from './components/sessions/apresentacao';
+import Dicasdesaude from './components/sessions/dicasdesaude';
+import { Menubar } from 'primereact/menubar';
+import Image from 'next/image';
 
 export default function Home() {
+  const apresentacaoRef = useRef(null);
+  const dicasdesaudeRef = useRef(null);
 
-    const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      // Função para verificar se a tela é mobile
-      const checkIsMobile = () => {
-        setIsMobile(window.innerWidth < 768); // Defina o ponto de quebra para dispositivos móveis
-      };
-  
-      // Verificar o tamanho da tela quando a janela é redimensionada
-      window.addEventListener('resize', checkIsMobile);
-  
-      // Verificar o tamanho da tela na montagem do componente
-      checkIsMobile();
-  
-      // Limpar o event listener quando o componente é desmontado
-      return () => window.removeEventListener('resize', checkIsMobile);
-    }, []);
-  
+  const items = [
+    {
+      label: 'Início',
+      command: () => {
+        scrollToSession(apresentacaoRef);
+      }
+    },
+    {
+      label: 'Dicas de Saúde',
+      command: () => {
+        scrollToSession(dicasdesaudeRef);
+      }
+    },
+  ];
+
+  const start = (
+    <Image 
+      src="/logo-menu.png" 
+      alt="logo" 
+      width={50} 
+      height={50} 
+      className="mr-8" 
+    />
+  );
+
+  const scrollToSession = (ref) => {
+    const yOffset = -65; // Ajuste de deslocamento para baixo, ajuste conforme necessário
+    const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
 
   return (
-    <div>
-      {isMobile ? (
-        <div className='h-[100dvh]' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
-
-          <div className='pt-7 flex justify-center'>
-            <LogoNome/>
-          </div>
-          <div className='mt-3'>
-          <TextoApoio/>
-          </div>
-          <DivVerde/>
-          <div className='flex justify-center'>
-            <FotoLosangoMobile/>
-          </div>
-          <div className='pb-7'>
-          <Botoes/>
-          </div>
-        </div>
-      ) : (
-        <div>
-          <div className='pt-5 px-16 pb-10 h-[100dvh]' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
-          <div className=''>
-          <Menubar/>
-          </div>
-          <div className='-mt-14 flex justify-evenly items-center'>
-            <div className='text-start'>
-            <NomeDra/>
-            <DivVerde/>
-            <div>
-            <TextoApoio/>
-            </div>
-            <div>
-          <Botoes/>
-          </div>
-          </div>
-          <div>
-          <FotoLosango/>
-          </div>
-          </div>
-          </div>
-        </div>
-      )}
+    <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
+      <div className="">
+        <Menubar model={items} start={start} className='px-4 lg:px-24 border-0 w-full ml-0' style={{ background: 'linear-gradient(180deg, rgba(125,166,83,0.9) 0%, rgba(200,226,112,0.9) 100%)' }} />
+      </div>
+      <div ref={apresentacaoRef}>
+        <Apresentacao />
+      </div>
+      <div ref={dicasdesaudeRef}>
+        <Dicasdesaude/>
+      </div>
     </div>
-
-    
   );
 }
-
