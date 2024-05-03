@@ -8,6 +8,7 @@ import DicasTitulo from './sessaoInstagram/dicasTitulo';
 import TextoApoioInstagram from './sessaoInstagram/textoApoio';
 import DivVerde from './sessaoInicial/linhaVerde';
 import BotaoInstagram from '../ui/botaoInstagram';
+import { trackGAEvent } from '@/app/utilities/google-analytics';
 
 export default function Apresentacao(...props) {
   const [isMobile, setIsMobile] = useState(false);
@@ -28,6 +29,10 @@ export default function Apresentacao(...props) {
     // Limpar o event listener quando o componente é desmontado
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
+  
+  function handleClick(event) {
+    trackGAEvent("Clique video Instagram", "redirect", "Botoes");
+  }
 
     return (
         <div>
@@ -41,7 +46,7 @@ export default function Apresentacao(...props) {
                     <TextoApoioInstagram/>                   
                 </div>
                 
-                <div className='mt-5 flex justify-center'>
+                <div className='mt-5 flex justify-center' onClick={handleClick}>
                     <InstagramEmbed url="https://www.instagram.com/reel/C6M42DdOWTt/" width={328}  />
                 </div>
                 <div className='flex justify-center'>
@@ -63,7 +68,7 @@ export default function Apresentacao(...props) {
                     </div>
                     
                 </div>
-                <div>
+                <div onClick={handleClick}>
                     <InstagramEmbed url="https://www.instagram.com/reel/C6M42DdOWTt/" width={328}  />
                 </div>
                 
