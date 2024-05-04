@@ -5,6 +5,7 @@ import './globals.css';
 import Apresentacao from './components/sessions/apresentacao';
 import Dicasdesaude from './components/sessions/dicasdesaude';
 import Servicos from './components/sessions/servicos';
+import Local from './components/sessions/local';
 import { Menubar } from 'primereact/menubar';
 import Image from 'next/image';
 
@@ -12,6 +13,7 @@ export default function Home() {
   const apresentacaoRef = useRef(null);
   const dicasdesaudeRef = useRef(null);
   const servicos = useRef(null);
+  const local = useRef(null);
 
   const items = [
     {
@@ -30,6 +32,12 @@ export default function Home() {
       label: 'Dicas de Saúde',
       command: () => {
         scrollToSession(dicasdesaudeRef);
+      }
+    },
+    {
+      label: 'Local',
+      command: () => {
+        scrollToSession(local);
       }
     },
     
@@ -64,6 +72,9 @@ export default function Home() {
       </div>
       <div ref={dicasdesaudeRef}>
         <Dicasdesaude/>
+      </div>
+      <div ref={local}>
+        <Local/>
       </div>
       
     </div>
