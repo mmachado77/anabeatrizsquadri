@@ -4,12 +4,14 @@ import React, { useRef } from 'react';
 import './globals.css';
 import Apresentacao from './components/sessions/apresentacao';
 import Dicasdesaude from './components/sessions/dicasdesaude';
+import Servicos from './components/sessions/servicos';
 import { Menubar } from 'primereact/menubar';
 import Image from 'next/image';
 
 export default function Home() {
   const apresentacaoRef = useRef(null);
   const dicasdesaudeRef = useRef(null);
+  const servicos = useRef(null);
 
   const items = [
     {
@@ -19,11 +21,18 @@ export default function Home() {
       }
     },
     {
+      label: 'Serviços',
+      command: () => {
+        scrollToSession(servicos);
+      }
+    },
+    {
       label: 'Dicas de Saúde',
       command: () => {
         scrollToSession(dicasdesaudeRef);
       }
     },
+    
   ];
 
   const start = (
@@ -50,9 +59,13 @@ export default function Home() {
       <div ref={apresentacaoRef}>
         <Apresentacao />
       </div>
+      <div ref={servicos}>
+        <Servicos/>
+      </div>
       <div ref={dicasdesaudeRef}>
         <Dicasdesaude/>
       </div>
+      
     </div>
   );
 }
