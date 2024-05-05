@@ -3,6 +3,11 @@
 import React, { useState, useEffect } from 'react'; 
 import TextoLocal from './sessaoLocal/textoLocal';
 import Topico from './sessaoLocal/topicoCentroClinico';
+import Contato from './sessaoLocal/contato';
+import ContatoMobile from './sessaoLocal/contatoMobile';
+import LogoBranco from './sessaoLocal/logoLocal';
+import LogoBrancoMobile from './sessaoLocal/logoLocalMobile';
+import DivBranca from './sessaoServicos/linhaBranca';
 
 export default function Local(...props) {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,21 +37,46 @@ export default function Local(...props) {
       <div style={{ position: 'relative', zIndex: 3 }}>
         {isMobile ? (
           <div>
-            {/* Conteúdo para dispositivos móveis */}
+          <div className='p-5 lg:p-20'>
+            <div className='flex justify-center'>
+            <LogoBrancoMobile/>
+            </div>
+
+            <div className='mt-5'>
+              <Topico text='Marcação de Consultas para o mesmo dia'/>
+              <Topico text='Atendimento às terças e quintas à tarde'/>
+              <Topico text='Local de segurança e conforto'/>
+              <Topico text='Estacionamento em frente ao local'/>
+              <Topico text='Consultas particulares com valores acessíveis'/>
+            </div>
+            <div className='mt-5'>
+              <DivBranca/>
+            </div>
+
+              <div className='mt-5'>
+              <ContatoMobile/>
+              </div>
+
           </div>
+        </div>
         ) : (
           <div>
             <div className='lg:p-20'>
-            <TextoLocal/>
-              <div>
-              <Topico text='Local de segurança e conforto'/>
-              <Topico text='Estacionamento em frente ao local'/>
-              <Topico text='Terças e quintas à tarde'/>
-              <Topico text='Consultas particulares com valores acessíveis'/>
-              <Topico text='Terças e quintas à tarde'/>
+              <div className='flex justify-center'>
+              <LogoBranco/>
               </div>
-              <div>
               
+            <div className='mt-16 flex items-center justify-around gap-5'>
+                <div className='max-w-[50%]'>
+                <Contato/>
+                </div>
+              <div>
+                <Topico text='Marcação de Consultas para o mesmo dia'/>
+                <Topico text='Atendimento às terças e quintas à tarde'/>
+                <Topico text='Local de segurança e conforto'/>
+                <Topico text='Estacionamento em frente ao local'/>
+                <Topico text='Consultas particulares com valores acessíveis'/>
+              </div>
               </div>
             </div>
           </div>

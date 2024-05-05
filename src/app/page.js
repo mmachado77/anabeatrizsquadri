@@ -6,6 +6,7 @@ import Apresentacao from './components/sessions/apresentacao';
 import Dicasdesaude from './components/sessions/dicasdesaude';
 import Servicos from './components/sessions/servicos';
 import Local from './components/sessions/local';
+import Creditos from './components/sessions/creditos';
 import { Menubar } from 'primereact/menubar';
 import Image from 'next/image';
 
@@ -75,6 +76,7 @@ export default function Home() {
       </div>
       <div ref={local}>
         <Local/>
+        <Creditos/>
       </div>
       
     </div>
