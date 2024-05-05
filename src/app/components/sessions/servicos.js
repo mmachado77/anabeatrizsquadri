@@ -7,6 +7,7 @@ import Pacientes18 from './sessaoServicos/pacientes18';
 import BotaoWhatsapp from '../ui/botaoWhatsapp';
 import React, { useState, useEffect } from 'react'; 
 import DivVerde from './sessaoInicial/linhaVerde';
+import FotoConsultorioMobile from './sessaoServicos/fotoConsultorioMobile';
 
 export default function Servicos(...props) {
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +47,7 @@ export default function Servicos(...props) {
               </div>
             <div className='mt-7 flex justify-center'>
             
-            <Coracao/>
+            <FotoConsultorioMobile/>
             </div>
             <div className='flex justify-center'>
             <label className='text-black/75'>Consultório Dra. Ana Beatriz Squadri</label>
@@ -57,11 +58,11 @@ export default function Servicos(...props) {
             </div>
 
           ) : (
-             <div className='mt-16 justify-evenly items-center gap-6'>
+             <div className='max-w-screen-xl mx-auto mt-16 px-8 items-center gap-6'>
               <div className=''>
               <IntroducaoServicos/>
               </div>
-            <div className='mt-7 flex justify-evenly'>
+            <div className='mt-7 flex justify-between'>
               <div>
             <Coracao/>
             <label className='text-black/75'>Consultório Dra. Ana Beatriz Squadri</label>

@@ -11,7 +11,7 @@ export default function Contato() {
             alt="Ícone Pin" 
             width={25} 
             height={25} 
-            priority
+            
             />
             </div>
             <div className="ml-2">
@@ -31,7 +31,7 @@ export default function Contato() {
             alt="Ícone Whatsapp" 
             width={25} 
             height={25} 
-            priority
+            
             />
             </div>
             <div className="ml-2">
@@ -49,7 +49,7 @@ export default function Contato() {
             alt="Ícone Email" 
             width={25} 
             height={25} 
-            priority
+            
             />
             </div>
             <div className="ml-2">

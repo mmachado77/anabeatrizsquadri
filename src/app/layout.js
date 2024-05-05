@@ -12,8 +12,14 @@ import './globals.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ana Beatriz Squadri",
-  description: "Página da Dra. Ana Beatriz Squadri",
+  title: "Dra. Ana Beatriz Squadri",
+  description: "Clínica Médica, Check-Up e Longevidade ao seu alcance.",
+  keywords: "Ana Beatriz Squadri, Clinica Médica, Médico, Médica, Menino Deus, Porto Alegre, Centro Clínico Mãe de Deus",
+  openGraph: {
+    title:"Dra. Ana Beatriz Squadri",
+    description:"Clínica Médica, Check-Up e Longevidade ao seu alcance.",
+    images: ["/logo-menu.png"]
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -10,7 +10,7 @@ function Topico(props) {
           alt="Ícone Logo" 
           width={25} 
           height={25} 
-          priority
+          
         />
         <span className='lg:text-xl font-bold ml-2'>{props.text}</span>
       </label>

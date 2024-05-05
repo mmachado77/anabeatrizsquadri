@@ -38,3 +38,7 @@ body {
     position: fixed;
 
 }
+
+.p-menubar.conflict {
+    background-color: #ff0000; /* Cor vermelha (exemplo) */
+}

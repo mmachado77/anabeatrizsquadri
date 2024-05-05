@@ -10,7 +10,7 @@ function TopicoCentroClinico(props) {
           alt="Ícone Logo" 
           width={25} 
           height={25} 
-          priority
+          
         />
         <span className='text-white lg:text-xl font-bold ml-2'>{props.text}</span>
       </label>

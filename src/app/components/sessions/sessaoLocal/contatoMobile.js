@@ -22,7 +22,7 @@ export default function ContatoMobile() {
             alt="Ícone Whatsapp" 
             width={25} 
             height={25} 
-            priority
+            
             />
             </div>
             <div className="ml-2">
@@ -40,7 +40,7 @@ export default function ContatoMobile() {
             alt="Ícone Email" 
             width={25} 
             height={25} 
-            priority
+            
             />
             </div>
             <div className="ml-2">

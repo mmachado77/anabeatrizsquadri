@@ -60,14 +60,14 @@ export default function Local(...props) {
           </div>
         </div>
         ) : (
-          <div>
-            <div className='lg:p-20'>
+          <div className='max-w-screen-xl mx-auto'>
+            <div className='lg:py-20'>
               <div className='flex justify-center'>
               <LogoBranco/>
               </div>
               
-            <div className='mt-16 flex items-center justify-around gap-5'>
-                <div className='max-w-[50%]'>
+            <div className='mt-16 items-center flex justify-between px-8 gap-5'>
+                <div className=''>
                 <Contato/>
                 </div>
               <div>

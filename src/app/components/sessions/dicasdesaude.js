@@ -58,9 +58,9 @@ export default function Apresentacao(...props) {
             </div>
             </div>
           ) : (
-            <div className='mt-16 pt-5 px-16 pb-10'>
-            <div className="flex justify-center items-center gap-24">
-            <div className='max-w-[1000px]'>
+            <div className='max-w-screen-xl mx-auto px-8 mt-16 pt-5 pb-10'>
+            <div className="flex justify-between items-center gap-24">
+            <div className=''>
                     <DicasTitulo/>
                     <DivVerde/>
                     <TextoApoioInstagram/>
