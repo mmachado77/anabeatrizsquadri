@@ -14,27 +14,41 @@ body {
 }
 
 .p-menuitem-text {
-    color: white;
+    color:#7DA653;
 }
 
 .p-menuitem-link:hover {
-    background-color: #7DA653 !important;
+    background-color: #C8E270 !important;
+
 }
 
-.p-focus {
-    background-color: #7DA653 !important;
+.p-menuitem.p-focus a {
+    background-color: #C8E270 !important;
 }
 
 
 
 @media screen and (max-width: 960px) {
-    .p-menubar .p-menubar-root-list {
-    background: #C8E270;
+    .p-menubar  {
+    display: flex;
+    justify-content: space-between;
     }
+    .p-menubar-root-list{
+        background: #ffffff;
+    }
+
 }
 
 .p-menubar {
-    z-index: 1;
-    position: fixed;
+    z-index: 5;
+}
 
+.menubarAnimacao{
+    animation: escorreMenu 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes escorreMenu {
+    from {top: -81px;}
+    to {top: 0px;}
 }

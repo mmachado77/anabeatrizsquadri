@@ -41,7 +41,7 @@ export default function Apresentacao(...props) {
             <div className="text-center">
             <div className='max-w-[1000px]'>
                     <DicasTitulo/>
-                    <DivVerde/>
+                    
 
                     <TextoApoioInstagram/>                   
                 </div>
@@ -57,9 +57,9 @@ export default function Apresentacao(...props) {
             </div>
             </div>
           ) : (
-            <div className='pt-5 px-16 pb-10'>
-            <div className="flex justify-center items-center gap-24">
-            <div className='max-w-[1000px]'>
+            <div className='max-w-screen-xl h-[100dvh] mx-auto px-8'>
+            <div className="flex justify-between items-center gap-24">
+            <div className=''>
                     <DicasTitulo/>
                     <DivVerde/>
                     <TextoApoioInstagram/>

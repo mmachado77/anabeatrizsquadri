@@ -8,6 +8,7 @@ import TextoApoio from '../sessions/sessaoInicial/textoApoio';
 import DivVerde from '../sessions/sessaoInicial/linhaVerde';
 import NomeDra from '../sessions/sessaoInicial/nomeDra';
 import Menubar from '../sessions/sessaoInicial/menuBar';
+import Topico from '../ui/topico';
 import React, { useState, useEffect } from 'react'; 
 
 export default function Apresentacao(...props) {
@@ -32,7 +33,7 @@ export default function Apresentacao(...props) {
     return (
         <div>
           {isMobile ? (
-            <div className='' >
+            <div className='mt-[-82px]' >
     
               <div className='pt-7 flex justify-center'>
                 <div className='mt-16'>
@@ -47,22 +48,43 @@ export default function Apresentacao(...props) {
               <div className='flex justify-center'>
                 <FotoLosangoMobile/>
               </div>
+              <div className='mx-8'>
+              <Topico text="Há 17 anos atuando no mercado"/>
+              <Topico text="Medicina atualizada e baseada em evidências"/>
+              <Topico text="Diagnóstico e tratamento claro e objetivo"/>
+              <Topico text="Rotineira da emergência do Hospital Mãe de Deus"/>
+              <Topico text="Socorrista do SAMU POA"/>
+              <Topico text="Cursando pós graduação em Nutrologia"/>
+              </div>
               <div className='pb-7'>
               <Botoes/>
               </div>
             </div>
           ) : (
             <div>
-              <div className='pt-5 px-16 pb-10'>
+              <div className='px-8 pb-10'>
 
-              <div className='mt-16 flex justify-evenly items-center'>
+              <div className='max-w-screen-xl mt-[-81px] h-[100dvh] mx-auto flex justify-evenly items-center'>
                 <div className='text-start'>
                 <NomeDra/>
                 <DivVerde/>
                 <div>
                 <TextoApoio/>
                 </div>
+                  <div className='mt-5 flex justify-around gap-3'>
+                    <div>
+                    <Topico text="Há 17 anos atuando no mercado"/>
+                    <Topico text="Medicina atualizada e baseada em evidências"/>
+                    <Topico text="Diagnóstico e tratamento claro e objetivo"/>
+                    </div>
+                    <div>
+                    <Topico text="Rotineira da emergência do Hospital Mãe de Deus"/>
+                    <Topico text="Socorrista do SAMU POA"/>
+                    <Topico text="Cursando pós graduação em Nutrologia"/>
+                    </div>
+                  </div>
                 <div>
+                <DivVerde/>
               <Botoes/>
               </div>
               </div>
