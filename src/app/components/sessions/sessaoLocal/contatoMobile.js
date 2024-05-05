@@ -6,10 +6,10 @@ export default function ContatoMobile() {
         <div >
         <div className='text-white text-center items-center flex justify-center'>
             <div className="ml-2">
-            <a className='text-white no-underline' href="https://maps.app.goo.gl/xTweiRHo2TtsLujT6" target="_blank" rel="noopener noreferrer">
-            <label className='block font-bold text-l lg:text-xl cursor-pointer'>Rua Costa 30/805, </label>
-            <label className='block italic text-l lg:text-xl cursor-pointer'>Centro Clínico Mãe de Deus</label>
-            <label className='block italic text-l lg:text-xl cursor-pointer'>Menino Deus - Porto Alegre</label>
+            <a className='mt-2 text-white no-underline' href="https://maps.app.goo.gl/xTweiRHo2TtsLujT6" target="_blank" rel="noopener noreferrer">
+            <label className='block mt-2 font-bold text-l lg:text-xl cursor-pointer'>Rua Costa 30/805, </label>
+            <label className='block mt-2 italic text-l lg:text-xl cursor-pointer'>Centro Clínico Mãe de Deus</label>
+            <label className='block mt-2 italic text-l lg:text-xl cursor-pointer'>Menino Deus - Porto Alegre</label>
             <label className='italic text-l lg:text-xl cursor-pointer'>51 3230-2754</label>
             </a>
             </div>
@@ -33,7 +33,7 @@ export default function ContatoMobile() {
         </div>
 
 
-        <div className='mt-5 text-white items-center flex justify-center'>
+        <div className='mt-5 mb-4 text-white items-center flex justify-center'>
             <div>
             <Image 
             src='/email-white.svg' 

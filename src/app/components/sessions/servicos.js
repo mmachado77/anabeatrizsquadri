@@ -55,15 +55,16 @@ export default function Servicos(...props) {
             <div className='mt-3 flex justify-center'>
             <BotaoWhatsapp/>
             </div>
+            <DivVerde/>
             </div>
 
           ) : (
-             <div className='max-w-screen-xl mx-auto mt-16 px-8 items-center gap-6'>
+             <div className='max-w-screen-xl h-[100dvh] mx-auto px-8 items-center gap-6'>
               <div className=''>
               <IntroducaoServicos/>
               </div>
             <div className='mt-7 flex justify-between'>
-              <div>
+              <div className=''>
             <Coracao/>
             <label className='text-black/75'>Consultório Dra. Ana Beatriz Squadri</label>
             </div>

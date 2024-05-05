@@ -23,19 +23,19 @@ export default function Creditos(...props) {
   }, []);
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div className='bg-[#076778]'>
         {isMobile ? (
-          <div className='text-center bg-[#09859C] p-5'>
-          <label className='block text-white text-base'>Desenvolvido por Matheus Machado</label>
+          <div className='text-end bg-[#076778] max-w-screen-xl mx-auto p-5'>
+          <label className='block text-white text-[13px]'>Desenvolvido com orgulho por Matheus Machado</label>
           <a className='no-underline' href="https://wa.me/5551995617505" target="_blank" rel="noopener noreferrer">
-          <label className='text-white italic text-base cursor-pointer'>Contato: 51 99561-7505</label>
+          <label className='text-white italic text-[13px] cursor-pointer'>Contato: 51 99561-7505</label>
           </a>
         </div>
         ) : (
-          <div className='text-center bg-[#09859C] p-5'>
-            <label className='block text-white text-base'>Desenvolvido por Matheus Machado</label>
+          <div className='text-end bg-[#076778] max-w-screen-xl mx-auto p-5'>
+            <label className='block text-white text-[13px]'>Desenvolvido com orgulho por Matheus Machado</label>
             <a className='no-underline' href="https://wa.me/5551995617505" target="_blank" rel="noopener noreferrer">
-            <label className='text-white italic text-base cursor-pointer'>Contato: 51 99561-7505</label>
+            <label className='text-white italic text-[13px] cursor-pointer'> Contato: 51 99561-7505</label>
             </a>
           </div>
         )}

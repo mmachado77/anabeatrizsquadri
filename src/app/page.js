@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { UseScrollPosition } from './components/hooks/useScrollPosition';
 import './globals.css';
 import Apresentacao from './components/sessions/apresentacao';
 import Dicasdesaude from './components/sessions/dicasdesaude';
@@ -15,8 +16,28 @@ export default function Home() {
   const dicasdesaudeRef = useRef(null);
   const servicos = useRef(null);
   const local = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const scrollPosition = UseScrollPosition();
 
+  useEffect(() => {
+    // Função para verificar se a tela é mobile
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Defina o ponto de quebra para dispositivos móveis
+    };
+
+    // Verificar o tamanho da tela quando a janela é redimensionada
+    window.addEventListener('resize', checkIsMobile);
+
+    // Verificar o tamanho da tela na montagem do componente
+    checkIsMobile();
+
+    // Limpar o event listener quando o componente é desmontado
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 
   const items = [
     {
@@ -52,20 +73,31 @@ export default function Home() {
       alt="logo" 
       width={50} 
       height={50} 
-      className="mr-8" 
+      className="mr-8 cursor-pointer" 
+      onClick={ () => scrollToSession(apresentacaoRef)}
     />
   );
 
   const scrollToSession = (ref) => {
-    const yOffset = -65; // Ajuste de deslocamento para baixo, ajuste conforme necessário
-    const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    let yOffset = isMobile ? -65 : -155
+    if(scrollPosition<=81) {
+      yOffset-=81;
+    } // Ajuste de deslocamento para baixo, ajuste conforme necessário
+    const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
 
   return (
-    <div className='' style={{background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(230,242,189,1) 100%)'}}>
-      <div className="">
-        <Menubar model={items} start={start} className='px-4 lg:px-24 border-0 w-full ml-0' style={{ background: 'linear-gradient(180deg, rgba(125,166,83,0.9) 0%, rgba(200,226,112,0.9) 100%)' }} />
+    <div className='' style={{background: 'linear-gradient(180deg, #e7f7b1 0%, #fff 35%, #fff 55%, #e7f7b1 100%)'}}>
+      <div className={classNames(
+        scrollPosition > 81 ? 'fixed shadow-md bg-white/[98%] menubarAnimacao ' : '',
+        'z-50 bg-white/0 w-full',
+      )}>
+        <Menubar model={items} start={start} className=
+        'pt-5 px-4 border-0 max-w-screen-xl mx-auto bg-white/0'
+      />
+        
+
       </div>
       <div ref={apresentacaoRef}>
         <Apresentacao />
@@ -76,9 +108,11 @@ export default function Home() {
       <div ref={dicasdesaudeRef}>
         <Dicasdesaude/>
       </div>
-      <div ref={local}>
+      <div className=''>
         <Local/>
+        <div ref={local}>
         <Creditos/>
+        </div>
       </div>
       
     </div>

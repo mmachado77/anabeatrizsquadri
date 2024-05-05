@@ -62,9 +62,9 @@ export default function Apresentacao(...props) {
             </div>
           ) : (
             <div>
-              <div className='pt-5 px-8 pb-10'>
+              <div className='px-8 pb-10'>
 
-              <div className='mt-16 max-w-screen-xl mx-auto flex justify-evenly items-center'>
+              <div className='max-w-screen-xl h-[100dvh] mx-auto flex justify-evenly items-center'>
                 <div className='text-start'>
                 <NomeDra/>
                 <DivVerde/>

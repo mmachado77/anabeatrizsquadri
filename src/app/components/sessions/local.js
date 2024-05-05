@@ -31,36 +31,36 @@ export default function Local(...props) {
   return (
     <div style={{ position: 'relative' }}>
       {/* Fundo com cor de fundo e imagem */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: '#09859C', zIndex: 1 }} />
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: '#076778', zIndex: 1 }} />
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundImage: "url('centroclinico.png')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 2 }} />
       {/* Conteúdo da sessão */}
       <div style={{ position: 'relative', zIndex: 3 }}>
         {isMobile ? (
           <div>
-          <div className='p-5 lg:p-20'>
+          <div className='p-5 px-8 flex flex-col justify-between gap-6'>
             <div className='flex justify-center'>
             <LogoBrancoMobile/>
             </div>
-
-            <div className='mt-5'>
+            <div className=''>
+              <DivBranca/>
+            </div>
+            <div className='flex flex-col justify-between gap-4'>
               <Topico text='Marcação de Consultas para o mesmo dia'/>
               <Topico text='Atendimento às terças e quintas à tarde'/>
               <Topico text='Local de segurança e conforto'/>
               <Topico text='Estacionamento em frente ao local'/>
               <Topico text='Consultas particulares com valores acessíveis'/>
             </div>
-            <div className='mt-5'>
-              <DivBranca/>
-            </div>
+            
 
-              <div className='mt-5'>
+              <div className=''>
               <ContatoMobile/>
               </div>
 
           </div>
         </div>
         ) : (
-          <div className='max-w-screen-xl mx-auto'>
+          <div className='max-w-screen-xl py-10 mx-auto'>
             <div className='lg:py-20'>
               <div className='flex justify-center'>
               <LogoBranco/>
