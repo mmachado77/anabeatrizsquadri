@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title:"Dra. Ana Beatriz Squadri",
     description:"Clínica Médica, Check-Up e Longevidade ao seu alcance.",
-    images: ["/logo-menu.png"]
+    images: "/logo-preview.png"
   },
 };
 
