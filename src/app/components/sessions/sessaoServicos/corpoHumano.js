@@ -1,11 +1,15 @@
-import { Image } from 'primereact/image';
-        
+import Image from "next/image";
 
-export default function Coracao() {
+export default function FotoConsultorio() {
 
     return (
-        <div>
-            <Image src='/consultorio.png' alt="Foto do Consultório" width="500" preview />
+        <div className="">
+          <Image 
+            src='/consultorio.png' 
+            alt="Foto Consultorio" 
+            width={500} 
+            height={398} 
+          />
         </div>
     );
 }
