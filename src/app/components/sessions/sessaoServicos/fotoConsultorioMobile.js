@@ -1,11 +1,15 @@
-import { Image } from 'primereact/image';
-        
+import Image from "next/image";
 
 export default function FotoConsultorioMobile() {
 
     return (
-        <div>
-            <Image src='/consultorio.png' alt="Foto do Consultório" width="380" preview />
+        <div className="">
+          <Image 
+            src='/consultorio.png' 
+            alt="Foto Consultorio" 
+            width={350} 
+            height={278} 
+          />
         </div>
     );
 }

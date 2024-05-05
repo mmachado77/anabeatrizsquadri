@@ -9,7 +9,6 @@ export default function imagemLosango() {
             alt="Foto Dra. Sorrindo" 
             width={250} 
             height={289} 
-            priority
           />
         </div>
     );
