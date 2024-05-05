@@ -59,7 +59,7 @@ export default function Servicos(...props) {
             </div>
 
           ) : (
-             <div className='max-w-screen-xl h-[100dvh] mx-auto px-8 items-center gap-6'>
+             <div className='max-w-screen-xl h-[100dvh] mx-auto px-8 items-center'>
               <div className=''>
               <IntroducaoServicos/>
               </div>
@@ -69,7 +69,7 @@ export default function Servicos(...props) {
             <label className='text-black/75'>Consultório Dra. Ana Beatriz Squadri</label>
             </div>
             <div className=''>
-              <div className='mt-5 flex gap-'>
+              <div className='mt-5 flex'>
                     <div className='content-start'>
                     <Topico text="Entrevista detalhada"/>
                     <Topico text="Avaliação de sintomas e funcionamento dos órgãos"/>

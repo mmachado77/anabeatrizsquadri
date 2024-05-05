@@ -33,7 +33,7 @@ export default function Apresentacao(...props) {
     return (
         <div>
           {isMobile ? (
-            <div className='' >
+            <div className='mt-[-82px]' >
     
               <div className='pt-7 flex justify-center'>
                 <div className='mt-16'>
@@ -64,7 +64,7 @@ export default function Apresentacao(...props) {
             <div>
               <div className='px-8 pb-10'>
 
-              <div className='max-w-screen-xl h-[100dvh] mx-auto flex justify-evenly items-center'>
+              <div className='max-w-screen-xl mt-[-81px] h-[100dvh] mx-auto flex justify-evenly items-center'>
                 <div className='text-start'>
                 <NomeDra/>
                 <DivVerde/>

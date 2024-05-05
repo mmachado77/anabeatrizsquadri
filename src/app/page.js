@@ -61,7 +61,7 @@ export default function Home() {
     {
       label: 'Local',
       command: () => {
-        scrollToSession(local);
+        scrollToSession(local, false);
       }
     },
     
@@ -78,11 +78,14 @@ export default function Home() {
     />
   );
 
-  const scrollToSession = (ref) => {
+  const scrollToSession = (ref, useOffset=true) => {
     let yOffset = isMobile ? -65 : -155
     if(scrollPosition<=81) {
       yOffset-=81;
     } // Ajuste de deslocamento para baixo, ajuste conforme necessário
+    if(!useOffset && !isMobile){
+      yOffset = 0;
+    }
     const y = ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
     window.scrollTo({ top: y, behavior: 'smooth' });
   };
@@ -108,9 +111,9 @@ export default function Home() {
       <div ref={dicasdesaudeRef}>
         <Dicasdesaude/>
       </div>
-      <div className=''>
+      <div className='' ref={local}>
         <Local/>
-        <div ref={local}>
+        <div>
         <Creditos/>
         </div>
       </div>
